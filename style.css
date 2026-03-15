@@ -1,0 +1,184 @@
+/* --- BIẾN TOÀN CỤC --- */
+:root {
+    --cyan: #00e5ff;
+    --pink: #ff00ea;
+    --bg-dark: #050505;
+    --card-bg: rgba(10, 10, 10, 0.95);
+    --neon-shadow: 0 0 15px rgba(0, 229, 255, 0.5);
+}
+
+/* --- TỔNG THỂ --- */
+body {
+    background-color: var(--bg-dark);
+    color: white;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* --- MÀN HÌNH KHÓA (KEY SCREEN) --- */
+#key-screen {
+    width: 90%;
+    max-width: 360px;
+    text-align: center;
+    padding: 40px 20px;
+    border: 2px solid var(--cyan);
+    border-radius: 30px;
+    background: var(--card-bg);
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.brand-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 22px;
+    border: 2px solid var(--cyan);
+    margin-bottom: 25px;
+    box-shadow: var(--neon-shadow);
+    object-fit: cover;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 15px var(--cyan); }
+    50% { transform: scale(1.05); box-shadow: 0 0 25px var(--cyan); }
+    100% { transform: scale(1); box-shadow: 0 0 15px var(--cyan); }
+}
+
+#key-input {
+    width: 85%;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    background: #111;
+    color: var(--cyan);
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+    outline: none;
+    transition: 0.3s;
+}
+
+#key-input:focus {
+    border-color: var(--cyan);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+}
+
+.btn-key {
+    width: 95%;
+    padding: 15px;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(90deg, var(--cyan), #00b8d4);
+    color: black;
+    font-weight: 800;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- MENU CHÍNH --- */
+#main-menu {
+    display: none;
+    width: 95%;
+    max-width: 400px;
+    background: var(--card-bg);
+    border: 1px solid #222;
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.5);
+}
+
+.monitor {
+    border: 1px solid var(--cyan);
+    border-radius: 20px;
+    padding: 18px;
+    margin-bottom: 25px;
+    background: rgba(0, 229, 255, 0.03);
+    position: relative;
+}
+
+.mon-head {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--cyan);
+    letter-spacing: 1px;
+}
+
+.mon-body {
+    font-family: 'Consolas', monospace;
+    color: var(--cyan);
+    font-size: 14px;
+    margin-top: 12px;
+    line-height: 1.8;
+}
+
+.card {
+    background: #111;
+    border: 1px solid #1f1f1f;
+    border-radius: 20px;
+    padding: 15px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: #333;
+    background: #151515;
+}
+
+.icon-box {
+    width: 45px;
+    height: 45px;
+    background: #0d1e21;
+    border-radius: 12px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #1a3a3f;
+    font-size: 20px;
+}
+
+.name { font-weight: 600; font-size: 14px; display: block; }
+.sub { font-size: 11px; color: #666; }
+
+/* --- SWITCH --- */
+.switch { position: relative; width: 46px; height: 24px; cursor: pointer; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: #222; border-radius: 24px; transition: .4s;
+}
+.slider:before {
+    position: absolute; content: ""; height: 18px; width: 18px;
+    left: 3px; bottom: 3px; background: #555; border-radius: 50%; transition: .4s;
+}
+input:checked + .slider { background: #003a42; }
+input:checked + .slider:before { transform: translateX(22px); background: var(--cyan); box-shadow: 0 0 10px var(--cyan); }
+
+/* --- RANGE --- */
+.range-container {
+    background: #111;
+    border-radius: 20px;
+    padding: 18px;
+    border: 1px solid #1f1f1f;
+    margin-top: 15px;
+}
+
+input[type=range] {
+    width: 100%;
+    margin-top: 10px;
+    accent-color: var(--cyan);
+    cursor: pointer;
+}
